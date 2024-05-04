@@ -17,4 +17,7 @@ def generer_mot_de_passe(longueur):
     mot_de_passe = ''.join(random.choice(caracteres) for _ in range(longueur))
     return mot_de_passe
 
+label_mot_de_passe = tk.Label(root, text="")
+label_mot_de_passe.grid(row=2, column=0, columnspan=2, padx=5, pady=5)
+
 root.mainloop()
