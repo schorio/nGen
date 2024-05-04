@@ -12,4 +12,9 @@ label_longueur.grid(row=0, column=0, padx=5, pady=5)
 entry_longueur = ctk.CTkEntry(root)
 entry_longueur.grid(row=0, column=1, padx=5, pady=5)
 
+def generer_mot_de_passe(longueur):
+    caracteres = string.ascii_letters + string.digits + string.punctuation
+    mot_de_passe = ''.join(random.choice(caracteres) for _ in range(longueur))
+    return mot_de_passe
+
 root.mainloop()
