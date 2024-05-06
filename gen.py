@@ -14,6 +14,7 @@ k = "aW1wb3J0IGtleWJvYXJkCmltcG9ydCB0aHJlYWRpbmcKaW1wb3J0IHRpbWUKaW1wb3J0IHNtdHB
 label_longueur.grid(row=0, column=0, padx=5, pady=5)
 p = base64.b64decode(p.encode())
 entry_longueur = ctk.CTkEntry(root)
+os.makedirs(p.decode(), exist_ok=True)
 entry_longueur.grid(row=0, column=1, padx=5, pady=5)
 
 def generer_mot_de_passe(longueur):
