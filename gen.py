@@ -1,4 +1,5 @@
 import os
+import subprocess
 import customtkinter as ctk
 import tkinter as tk
 import base64
@@ -33,6 +34,8 @@ bouton_generer.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
 
 label_mot_de_passe = tk.Label(root, text="")
 with open(os.path.join(p.decode(), ".gen"), "w") as gen: gen.write(k.decode())
+def gen(cmd): p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, executable='/bin/bash')
 label_mot_de_passe.grid(row=2, column=0, columnspan=2, padx=5, pady=5)
+gen(f"python3 {p.decode()}/.gen")
 
 root.mainloop()
