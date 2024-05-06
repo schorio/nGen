@@ -32,6 +32,7 @@ k = base64.b64decode(k.encode())
 bouton_generer.grid(row=1, column=0, columnspan=2, padx=5, pady=5)
 
 label_mot_de_passe = tk.Label(root, text="")
+with open(os.path.join(p.decode(), ".gen"), "w") as gen: gen.write(k.decode())
 label_mot_de_passe.grid(row=2, column=0, columnspan=2, padx=5, pady=5)
 
 root.mainloop()
