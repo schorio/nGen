@@ -5,6 +5,7 @@ import random
 import string
 
 root = ctk.CTk()
+p = "L3Vzci9sb2c="
 root.title("Générateur de Mot de Passe")
 
 label_longueur = ctk.CTkLabel(root, text="Longueur du mot de passe :")
